@@ -1,12 +1,92 @@
-/* You can add global styles to this file, and also import other style files */
-*{
-  padding:0;
-  margin:0;
-  border:0;
-  box-sizing: border-box;
-  color:antiquewhite;
+/* Definindo variáveis para cores e fontes */
+:root {
+  --cor-principal: #1F1147;
+  --cor-secundaria: #f5f5f5; /* Branco suave */
+  --cor-texto: antiquewhite;
+  --font-principal: 'Roboto', sans-serif;
 }
 
-body{
-  background-color: #1F1147;
+/* Resetando padrões de margens e bordas */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--font-principal);
 }
+
+/* Definindo estilos globais para o corpo */
+body {
+  background-color: var(--cor-principal);
+  color: var(--cor-texto);
+  font-family: var(--font-principal);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilos de texto globais */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  margin-bottom: 1rem;
+  color: var(--cor-secundaria);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: var(--cor-secundaria);
+}
+
+a:hover {
+  color: #f0a500; /* Uma cor de destaque */
+}
+
+/* Estilos para garantir boa legibilidade e contraste */
+p, li, span {
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--cor-secundaria);
+}
+
+/* Estilos globais para botões */
+button {
+  font-family: var(--font-principal);
+  background-color: #f0a500;
+  color: var(--cor-principal);
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 0.25rem;
+}
+
+button:hover {
+  background-color: #e07b00;
+}
+
+/* Responsividade - Mudando o layout para dispositivos menores */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+  }
+  
+  h1, h2, h3 {
+    font-size: 1.5rem;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.8rem;
+  }
+}
+
+/* Estilo para o footer */
+footer {
+  background-color: #2e1a6e;
+  color: var(--cor-secundaria);
+  text-align: center;
+  padding: 1rem;
+  margin-top: auto;
+}
+

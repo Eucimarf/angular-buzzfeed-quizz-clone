@@ -1,75 +1,152 @@
-.quizz__container{
-  width: 80%;
-  margin: auto;
-  margin-top: 20px;
+/* Variáveis para cores e fontes */
+:root {
+  --cor-principal: #644ED2;
+  --cor-secundaria: #4224d9;
+  --cor-terciaria: #18ab29;
+  --cor-fundo: #1F0539;
+  --cor-texto: #ffffff;
+  --font-principal: 'Segoe UI', sans-serif;
+  --font-secundaria: 'Arial', sans-serif;
 }
 
-.quizz_logo{
+/* Reset de estilos globais */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+  font-family: var(--font-principal);
+}
+
+/* Container do quizz */
+.quizz__container {
+  width: 80%;
+  max-width: 1200px; /* Limite máximo para o container */
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #2e1a6e; /* Fundo suave para o container */
+  border-radius: 12px;
+}
+
+/* Logo do quizz */
+.quizz_logo {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
-.quizz_logo > h3{
-  margin-top: 20px;
+.quizz_logo > h3 {
+  margin-top: 15px;
+  color: var(--cor-texto);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.quizz_questions{
+/* Estilo das perguntas do quizz */
+.quizz_questions {
   display: flex;
   justify-content: center;
   align-items: center;
-  border:1px solid #4224d9;
-  border-radius: 8px;
-  background-color: #644ED2;
+  border: 1px solid var(--cor-secundaria);
+  border-radius: 10px;
+  background-color: var(--cor-principal);
   width: 100%;
-  height: 200px;
-  font-size: 20px;
-  font-family: 'Segoe UI';
+  height: 220px;
+  font-size: 1.2rem;
+  font-family: var(--font-principal);
+  color: var(--cor-texto);
   margin-bottom: 20px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  line-height: 1.5;
 }
 
-.quizz_options{
+/* Opções de resposta do quizz */
+.quizz_options {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin: auto;
-  margin-bottom: 20px;
+  gap: 15px;
+  margin: 0 auto;
+  margin-bottom: 30px;
 }
 
-.btn-option{
-  background-color: transparent;
+/* Estilo dos botões de opções */
+.btn-option {
+  background-color: #f5f5f5; /* Cor de fundo clara para destacar o botão */
   border-radius: 8px;
-  border: 1px solid #18ab29;
-  width: 50%;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-family: Arial;
-  font-size: 17px;
-  padding: 16px 31px;
+  border: 2px solid var(--cor-terciaria);
+  width: 45%;
+  min-width: 150px;
+  padding: 16px 25px;
+  color: var(--cor-principal); /* Texto em cor escura */
+  font-family: var(--font-secundaria);
+  font-size: 1rem;
   text-decoration: none;
-  text-shadow: 0px 1px 0px #2f6627;
+  text-align: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-option:hover{
-  background-color: #5cbf2a;
+/* Efeito de hover nos botões */
+.btn-option:hover {
+  background-color: #e0e0e0; /* Cor mais escura ao passar o mouse */
+  transform: scale(1.05); /* Leve efeito de escala */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efeito de sombra no hover */
 }
 
-.btn-option:active{
+/* Efeito de clique no botão (seleção) */
+.btn-option:active {
   position: relative;
-  top:1px;
+  top: 2px;
+  background-color: #18ab29; /* Verde para indicar a seleção */
+  color: #ffffff; /* Texto branco para contraste */
+  border-color: #18ab29; /* Alterando a borda para verde também */
 }
 
-.quizz_results{
+/* Foco nos botões */
+.btn-option:focus {
+  outline: none; /* Remover a borda de foco padrão */
+  box-shadow: 0 0 5px 2px #18ab29; /* Adicionar destaque verde ao focar */
+}
+
+/* Estilo do resultado do quizz */
+.quizz_results {
   width: 100%;
   height: 350px;
-  background-color: #1F0539;
+  background-color: var(--cor-fundo);
   border-radius: 10px;
   padding: 30px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: var(--cor-texto);
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Ajustes de responsividade */
+@media (max-width: 768px) {
+  .quizz__container {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .quizz_questions {
+    font-size: 1.1rem;
+    height: auto;
+    padding: 10px;
+  }
+
+  .btn-option {
+    width: 100%;
+    font-size: 1.2rem;
+  }
+}
+
